@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
-const login = () => {
+const Login = () => {
   const [error, setError] = useState(null);
   const [verificationEmail, setVerificationEmail] = useState("");
   const [showVerificationModal, setShowVerificationModal] = useState(false);
@@ -56,4 +56,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

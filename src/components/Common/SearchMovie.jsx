@@ -58,7 +58,7 @@ export default function SearchMovie() {
                 <SearchMovieCard results={data.results.slice(0, 4)} />
                 <Link
                   href={`/search/${encodeURIComponent(debouncedQuery)}`}
-                  className="btn mt-2 w-full text-xs font-bold text-black hover:text-white uppercase btn-ghost btn-sm md:text-sm"
+                  className="btn mt-2 w-full text-xs font-bold text-black uppercase btn-ghost btn-sm hover:text-white md:text-sm"
                   onClick={() => {
                     if (document.activeElement instanceof HTMLElement) {
                       document.activeElement.blur();
@@ -71,8 +71,8 @@ export default function SearchMovie() {
             ) : (
               <div className="p-4 text-center">
                 <p className="text-sm font-bold md:text-base">
-                  "Sorry, we couldn’t find the movie… <br />
-                  but our hearts are always here for you! ❤️🎬"
+                  &quot;Sorry, we couldn’t find the movie… <br />
+                  but our hearts are always here for you! ❤️🎬&quot;
                 </p>
               </div>
             )}

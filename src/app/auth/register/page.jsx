@@ -6,7 +6,7 @@ import { authRequest } from "@/utility/auth";
 import { useState } from "react";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
-const register = () => {
+const Register = () => {
   const [error, setError] = useState(null);
   const [verificationEmail, setVerificationEmail] = useState("");
 
@@ -49,4 +49,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

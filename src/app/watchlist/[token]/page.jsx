@@ -24,12 +24,11 @@ import { useWatchlistMutation } from "@/hooks/useFormMutation";
 export default function WatchlistDetail({ params }) {
   const { token } = params;
   const router = useRouter();
-  const [thumbnailUrl, setThumbnailUrl] = useState(null);
   const { user } = useAuth();
-  const { data: watchlist, isLoading, isError, error } = useWatchlist(token);
+  const [thumbnailUrl, setThumbnailUrl] = useState(null);
   const queryClient = useQueryClient();
+  const { data: watchlist, isLoading, isError, error } = useWatchlist(token);
 
-  // --- HOOK UNTUK EDIT WATCHLIST ---
   const {
     formData,
     setFormData,
@@ -131,10 +130,6 @@ export default function WatchlistDetail({ params }) {
     toast.success(results?.message);
   };
 
-  if (isLoading) return <Loading />;
-  if (isError) return <p>Error loading watchlist: {error.message}</p>;
-  if (!watchlist) return <p>Watchlist not found.</p>;
-
   const totalMovies = watchlist.items?.length || 0;
   const watchlistItem = watchlist?.items;
   const isOwned =
@@ -143,6 +138,10 @@ export default function WatchlistDetail({ params }) {
   const filteredMembers = watchlist?.members?.filter(
     (member) => member.role === "OWNER" || member.role === "COLLABORATOR",
   );
+
+  if (isLoading) return <Loading />;
+  if (isError) return <p>Error loading watchlist: {error.message}</p>;
+  if (!watchlist) return <p>Watchlist not found.</p>;
 
   return (
     <div className="mx-auto flex w-full flex-col items-center justify-center">

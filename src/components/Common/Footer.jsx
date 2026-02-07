@@ -29,8 +29,8 @@ const Footer = () => {
                 className="h-auto w-32 md:w-[150px]" // Resize logo dikit di mobile
               />
             </Link>
-            <p className="mt-2 text-base text-gray-300 md:text-lg">
-              "Every Movie Tells Your Tale"
+            <p className="mt-2 text-lg">
+              &quot;Every Movie Tells Your Tale&quot;
             </p>
           </div>
 
