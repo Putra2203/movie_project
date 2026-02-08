@@ -79,7 +79,6 @@ export default function Profile() {
     savedWatchlists,
   } = useProfileData(user?.id);
 
-
   if (!user) return <Loading />;
 
   const isLoading =

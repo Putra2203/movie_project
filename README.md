@@ -54,7 +54,7 @@ Project ini dibuat pake teknologi-teknologi yang lagi _hype_ dan _reliable_ di i
 
 ## ✍️ Author
 
-**Erdin Purwa Putra**
+**Erdin Purwa Putra,**
 **Juan Stevenson**
 _Informatics Engineering Student & Software Engineer Wannabe_
 
