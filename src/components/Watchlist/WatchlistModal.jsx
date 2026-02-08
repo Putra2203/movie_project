@@ -22,7 +22,7 @@ const WatchlistModal = ({
   };
 
   return (
-    <div className="modal-box w-11/12 max-w-3xl bg-[#1e1e1e] p-6 text-white md:p-8">
+    <div className="modal-box w-11/12 max-w-3xl bg-[#1e1e1e] p-6 text-white md:p-8 rounded-2xl">
       <form method="dialog">
         <button className="btn absolute top-4 right-4 btn-circle text-white/60 btn-ghost btn-sm hover:text-white">
           ✕

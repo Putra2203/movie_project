@@ -52,7 +52,6 @@ export default function UserProfileLayout({
   };
 
   return (
-    // FIX 1: Tambahkan 'max-w-[100vw] overflow-x-hidden' untuk mencegah scroll samping
     <div className="profile-container relative mx-auto mt-16 w-full max-w-7xl overflow-x-hidden px-4 pt-6 sm:pt-8 md:pt-20 lg:mt-0 lg:pt-28">
       <div className="profile-wrapper flex flex-col gap-6 lg:flex-row lg:gap-8">
         <div className="profile-content-left w-full lg:w-3/4">
@@ -214,7 +213,7 @@ export default function UserProfileLayout({
       {/* FIX 2: Pastikan class modal-bottom dan sm:modal-middle ada di sini */}
       <dialog
         id="watchlist-modal"
-        className="modal modal-bottom sm:modal-middle"
+        className="modal fixed inset-0 !flex modal-bottom h-screen w-screen !items-center !justify-center overflow-y-auto p-4 lg:p-0 pl-10 lg:pl-0"
       >
         <WatchlistModal
           handleChange={handleChange}

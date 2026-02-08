@@ -83,7 +83,6 @@ export default function WatchlistDetail({ params }) {
     },
   });
 
-  // --- BAGIAN 2: HELPER FUNCTIONS ---
 
   const handleEditClick = () => {
     if (!watchlist) return;

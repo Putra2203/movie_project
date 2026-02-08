@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-// useRouter tidak perlu dipakai jika kita pakai Link
 import { FaRegStar } from "react-icons/fa";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import Link from "next/link";
@@ -18,10 +17,6 @@ const CardMovieList = ({ results = [] }) => {
 
         return (
           <div key={result.id} className="w-full">
-            {/* PERBAIKAN UTAMA: 
-               Link membungkus seluruh area Gambar. 
-               Jadi di mobile, tap gambar = klik link.
-            */}
             <Link href={`/movies/${result?.id}`}>
               <div className="group relative aspect-[2/3] w-full cursor-pointer overflow-hidden rounded-lg">
                 <Image
@@ -31,14 +26,9 @@ const CardMovieList = ({ results = [] }) => {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   alt={result.title || "Movie poster"}
-                  sizes="(max-width: 768px) 50vw, 33vw" // Optimization hint untuk Next Image
+                  sizes="(max-width: 768px) 50vw, 33vw"
                 />
 
-                {/* OVERLAY DESKTOP:
-                   Kita gunakan opacity-0 (invisible) secara default.
-                   Saat group di-hover, opacity jadi 100 (visible).
-                   pointer-events-none memastikan overlay ini tidak menghalangi klik di mobile.
-                */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <IoPlayCircleOutline className="text-6xl text-white drop-shadow-md transition-transform duration-300 group-hover:scale-110" />
                 </div>
