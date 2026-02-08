@@ -37,13 +37,10 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu z-50 mt-3 w-80 rounded-box bg-base-100 p-2 text-neutral shadow" // Lebarkan w-52 jadi w-64 biar search muat
+              className="dropdown-content menu z-50 mt-3 w-80 rounded-box bg-base-100 p-2 text-neutral shadow"
             >
-              {/* 1. Tambahkan SearchMovie di sini (Khusus Mobile) */}
               <li className="mb-2 border-b border-gray-200 pb-2 md:hidden">
                 <div className="pointer-events-auto">
-                  {" "}
-                  {/* Fix agar input bisa diklik */}
                   <SearchMovie />
                 </div>
               </li>
@@ -57,7 +54,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Logo Desktop */}
         <div className="navbar-start hidden lg:flex">
           <Link href="/" className="transition hover:opacity-80">
             <Image
@@ -69,7 +65,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Center Logo for Mobile */}
         <div className="navbar-center lg:hidden">
           <Link href="/">
             <Image
@@ -104,7 +99,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* 2. SearchMovie Desktop (Tetap hidden di mobile) */}
+          {/* 2. SearchMovie Desktop (hidden di mobile) */}
           <div className="hidden md:block">
             <SearchMovie />
           </div>
@@ -136,7 +131,13 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <div className="flex items-center justify-center rounded-full bg-accent p-1">
-                    <UserCircle size={32} className="md:h-[42px] md:w-[42px]" />
+                    <Image
+                      src="/assets/images/noimage.jpg"
+                      alt="Profile"
+                      fill
+                      className="object-cover md:h-[42px] md:w-[42px] rounded-full"
+                      sizes="44px"
+                    />
                   </div>
                 )}
               </div>
